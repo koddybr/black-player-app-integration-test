@@ -8,12 +8,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import util.GetProperties;
 
 public class SearchFileRunner {
-    private String title="nang";
+    private String title;
     SearchMusic searchMusic = new SearchMusic();
     StarApp starApp = new StarApp();
     PlayList playList = new PlayList();
+    {
+        title= GetProperties.getInstance().getMusicShort1();
+    }
     @Given("I select option search")
     public void iSelectOptionSearch() {
         starApp.grantPermissionButton.click();

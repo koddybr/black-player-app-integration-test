@@ -6,13 +6,18 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
+import util.GetProperties;
 
 public class CreatePlayListRunner {
     private String title="Rock\\n";
-    private String musicOne="Nangs";
-    private String musicTwo="Reality";
+    private String musicOne;
+    private String musicTwo;
     private PlayList playList = new PlayList();
     private StarApp starApp = new StarApp();
+    {
+        musicOne= GetProperties.getInstance().getMusicShort1();
+        musicTwo= GetProperties.getInstance().getMusicShort2();
+    }
     @Given("I select create empty playlist")
     public void iSelectCreateEmptyPlaylist() {
         starApp.grantPermissionButton.click();

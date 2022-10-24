@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import singletonSession.Session;
+import util.GetProperties;
 
 public class CreateNewListMusic {
 
@@ -15,8 +16,8 @@ public class CreateNewListMusic {
     @Test
     public void verifyCreateNewList(){
         String title="Rock\\n";
-        String musicOne="Nangs";
-        String musicTwo="Reality";
+        String musicOne= GetProperties.getInstance().getMusicShort1();
+        String musicTwo= GetProperties.getInstance().getMusicShort2();
 
         starApp.grantPermissionButton.click();
         starApp.allowButton.click();

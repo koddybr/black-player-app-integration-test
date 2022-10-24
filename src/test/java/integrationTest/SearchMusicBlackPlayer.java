@@ -5,6 +5,7 @@ import activity.SearchMusic;
 import activity.StarApp;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import util.GetProperties;
 
 public class SearchMusicBlackPlayer {
 
@@ -15,7 +16,8 @@ public class SearchMusicBlackPlayer {
     @Test
     public void verifySearchMusic(){
 
-        String title="nang";
+        String title= GetProperties.getInstance().getMusicShort1();
+
         starApp.grantPermissionButton.click();
         starApp.allowButton.click();
 
