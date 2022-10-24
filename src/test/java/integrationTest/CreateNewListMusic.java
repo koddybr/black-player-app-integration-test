@@ -1,27 +1,26 @@
 package integrationTest;
 
-import activity.ListScreen;
-import activity.MainScreen;
-import activity.NoteForm;
-import activity.PlayList;
+import activity.*;
+import io.appium.java_client.AppiumDriver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import singletonSession.Session;
 
 public class CreateNewListMusic {
 
-    MainScreen mainScreen = new MainScreen();
-    NoteForm createNoteForm = new NoteForm();
-    ListScreen listScreen = new ListScreen();
-    StarAppTest starApp = new StarAppTest();
     PlayList playList = new PlayList();
+
+    StarApp starApp = new StarApp();
 
     @Test
     public void verifyCreateNewList(){
+        String title="Rock\\n";
+        String musicOne="Nangs";
+        String musicTwo="Reality";
 
-        String title="Rock";
-        String musicOne="eventually";
-        String musicTwo="gossip";
-
+        starApp.grantPermissionButton.click();
+        starApp.allowButton.click();
+        playList.selectOptionPlaylist.clickWait();
         playList.createEmptyPlayList.click();
         playList.writeNameList.setText(title);
         playList.buttonCreate.click();
@@ -33,16 +32,13 @@ public class CreateNewListMusic {
         playList.selectMusicTwo.click();
         playList.finishSelectMusic.click();
 
-        Assertions.assertFalse(playList.isNoteDisplayed(musicOne),
+        Assertions.assertTrue(playList.musicFromPlayList.isControlDisplayed(),
                 "ERROR, the title was not searcher");
 
-        Assertions.assertFalse(playList.isNoteDisplayed(musicTwo),
+        playList.musicFromPlayList.click();
+
+        Assertions.assertTrue(playList.playerControl.isControlDisplayed(),
                 "ERROR, the title was not searcher");
-
-
-
-
-
     }
 
 }

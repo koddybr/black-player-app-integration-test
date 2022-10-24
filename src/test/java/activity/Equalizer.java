@@ -3,6 +3,7 @@ package activity;
 import appiumControl.Button;
 import appiumControl.Label;
 import appiumControl.TextBox;
+import io.cucumber.java.en.But;
 import io.cucumber.java.zh_tw.並且;
 import org.openqa.selenium.By;
 
@@ -12,13 +13,15 @@ public class Equalizer {
     //div[contains(text(),"Equalizer")]
     public Button equalizerOn = new Button(By.id("com.musicplayer.blackplayerfree:id/chbx_equalizer_enable"));
 
+    public Button equalizer60Hz = new Button(By.id("com.musicplayer.blackplayerfree:id/seekBar_equalizer1"));
+
     public Button soundEffects = new Button(By.xpath("//android.widget.LinearLayout[@content-desc=\"SOUND EFFECTS\"]/android.widget.TextView"));
 
     public Button bassBoost = new Button(By.id("com.musicplayer.blackplayerfree:id/chbx_equalizer_enablebassboost"));
 
     public Button virtualizer = new Button(By.id("com.musicplayer.blackplayerfree:id/chbx_soundeffects_virtualizer_enable"));
 
-    public boolean isNoteDisplayed(String title){
+    public boolean isTextViewDisplayed(String title){
         Label note= new Label(By.xpath("//android.widget.TextView[@text='"+title+"']"));
         return note.isControlDisplayed();
 

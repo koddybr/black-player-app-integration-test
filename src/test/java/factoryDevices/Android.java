@@ -17,8 +17,8 @@ public class Android implements IDevice{
 //        capabilities.setCapability("appPackage","com.android.calculator2");
 //        capabilities.setCapability("appActivity","com.android.calculator2.Calculator");
 
-        capabilities.setCapability("appPackage","com.vrproductiveapps.whendo");
-        capabilities.setCapability("appActivity","com.vrproductiveapps.whendo.ui.HomeActivity");
+        capabilities.setCapability("appPackage","com.musicplayer.blackplayerfree");
+        capabilities.setCapability("appActivity","com.kodarkooperativet.blackplayerfree.activities.ViewPagerActivity");
 
         capabilities.setCapability("platformName","Android");
         AppiumDriver driver= null;
